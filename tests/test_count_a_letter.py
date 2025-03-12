@@ -1,19 +1,23 @@
 from main import count_a_letter
 import pytest
 
-def test_demo_one():
-    num_1 = 8
-    num_2 = 9
-
-    result = num_1 + num_2
-
-    assert result == 17
-
-def test_demo_two():
-    num_1 = 18
-    num_2 = 24
-
-    result = num_1 + num_2
-
-    assert result == 42
-# Delete the demo tests and add your tests here 
+# Probar si la letra se repite varias veces en mi nombre 
+def test_count_multiple_ocurrences():
+    sentence = "Dennif"
+    letter = "n"
+    
+    # Act
+    result = count_a_letter(sentence, letter)
+    print("result must be 2")
+    # Assert
+    assert result == 2
+    
+#Test if it has 0 ocurrences
+def test_count_xero_ocurrences():
+    sentence = "Dennif"
+    letter = "z"
+    
+    result = count_a_letter(sentence, letter)
+    print("Result must fail because is not z i de sentence Dennif")
+    
+    assert result == 0
